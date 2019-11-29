@@ -59,7 +59,7 @@ provider:
 
 functions:
   hello:
-    handler: logger.hello # new name
+    handler: handler.logger # new name
     events: # 9-174 Using AWS CodeCommit - wire up function
       - http:
           path: message
