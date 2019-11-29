@@ -1,0 +1,21 @@
+# 9-180 Defining the CodeBuild build specification file
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Serverless  # echo just as 'user' feedback during build
+      - npm install -g serverless   # serverless is needed on the CodeBuild container (global availability on that container)
+
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies
+      - npm install                # get all the node_modules goodies as in package.json
+  build:
+    commands:
+      - echo Deployment started on `date`   # NB interpolated  `date` - for a timestamp
+      - echo Deploying with Serverless Framework    #about to use sls/serverless command on container (which should have been set as Linux not Windows, so 'sls' should be ok)
+      - sls deploy -v -s $ENV_NAME  # dollar $ prefix to access CodeBuild configuration environment variables
+  post_build:
+    commands:
+      - echo Deployment completed on `Date`
