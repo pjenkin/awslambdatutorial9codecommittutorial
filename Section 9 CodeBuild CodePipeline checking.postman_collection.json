@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "38c0916e-8975-43ef-bac5-6b68d3fedacc",
+		"name": "Section 9 CodeBuild CodePipeline checking",
+		"description": "Udemy AWS Lambda Serverless course section 9 on CI/CD with AWS CodeBuild & CodeCommit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET check for message endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://8hjq7876mj.execute-api.us-east-1.amazonaws.com/dev/message",
+					"protocol": "https",
+					"host": [
+						"8hjq7876mj",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"message"
+					]
+				},
+				"description": "check the endpoint for 200 and correct body"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
